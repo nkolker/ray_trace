@@ -8,14 +8,24 @@ int main(int argc, char *argv[]){
 	Vector4 camFwd = Vector4(0.0F, 0.0F,-1.0F, 0.0F);
 	Vector4 camUp  = Vector4(0.0F, 1.0F, 0.0F, 0.0F);
 	Camera cam = Camera(2, 2, 90.0F, camPos, camFwd, camUp);
+	Sphere s = Sphere(Vector4(0.0F, 0.0F, -2.0F, 1.0F), 1.0F);
+	std::vector<Object3D*> objs;
+	objs.push_back(s);
+	render(cam, objs);
+}
+
+void render(Camera cam, std::vector<Object3D*> objs){
 	Ray *camRays;
 	size_t arrayLen = 0;
-	//std::cerr << "Camera aspect ratio = " << cam.getAspectRatio() << "\n";
 	camRays = generatePrimaryRays(arrayLen, cam);
-	/*for(size_t i = 0; i < arrayLen; i++){
-		camRays[i].print();
-		std::cerr << "\n";
-	}*/
+}
+
+Vector4 castRay(Ray &r, std::vector<Object3D> objs){
+
+}
+
+bool trace(Ray &r, std::vector<Object3D> objs, float tNear, Object3D *o){
+
 }
 
 /*Generates primary rays from the camera. Returns pointer to dynamically allocated Ray array. Takes as arguments 

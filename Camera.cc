@@ -16,7 +16,7 @@
 		horizResolution = hRes;
 		vertResolution  = vRes;
 		aspectRatio = ((float) horizResolution) / ((float) vertResolution);
-		if(vFOV < 180.0F){
+		if(vFOV < 180.0F && vFOV > 0.0F){
 			vertFOV = vFOV;
 		}
 		else{
